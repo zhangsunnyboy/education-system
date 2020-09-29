@@ -221,9 +221,11 @@
 			//监听工具条
 			table.on('tool(test)', function(obj){
 				var data = obj.data;
+				// 查看
 				if(obj.event === 'detail'){
 					layer.alert('序号 :      ' + data.id + '<br> 班级名称: ' + data.name + '<br> 开班日期: ' +
 					data.createtime + '<br> 周期:      ' + data.week + '<br> 开班地址: ' + data.location);
+					// 删除
 				} else if(obj.event === 'del'){
 					layer.confirm('真的删除行么' +data.id, function(index){
 						layui.$.ajax({
@@ -241,11 +243,18 @@
 						obj.del();
 						layer.close(index);
 					});
-				} else if(obj.event === 'edit'){
+				}
+				// 修改
+				else if(obj.event === 'edit'){
 					$("#id").attr('value', data.id);
+					$("#week").attr('value', data.week);
+					$("#createtime").attr('value', data.createtime);
+					$("#name").attr('value', data.name);
+					$("#location").attr('value', data.location);
 				}
 			});
 
+			// 搜索框
 			$('.serchDiv .layui-btn').on('click', function(){
 				var type = $(this).data('type');
 				active[type] ? active[type].call(this) : '';
@@ -258,8 +267,9 @@
 
 		});
 
+		// 修改ajax
 		$("#but").click(function () {
-			var id = $("#id").val()
+			var id = $("#id").val();
 			$.ajax({
 				type: 'get',
 				url:'/grade/updateGrade.do?id='+id,

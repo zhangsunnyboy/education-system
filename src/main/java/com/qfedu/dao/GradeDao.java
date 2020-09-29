@@ -9,4 +9,5 @@ public interface GradeDao {
     public void insertGrade(Grade grade);
     public List<Grade> selectGradeAll();
     public void delectGradeById(int id);
+    public void updateGrade(Grade grade);
 }

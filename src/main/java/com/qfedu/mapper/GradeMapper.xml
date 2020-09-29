@@ -55,6 +55,32 @@
     <delete id="delectGradeById" parameterType="int">
         delete from t_grade where id =#{id}
     </delete>
+    <update id="updateGrade" parameterType="com.qfedu.entity.Grade">
+        update t_grade set
+        <trim suffixOverrides=",">
+            <if test="u_no !=null">u_no=#{u_no},
+            </if>
+        <if test="
+        name !=null">name=#{name},
+        </if>
+            <if test="createtime !=null">
+                createtime=#{createtime},
+            </if>
+            <if test="week !=null">
+                week= #{week},
+            </if>
+            <if test="location !=null">
+                location= #{location},
+            </if>
+            <if test="flag !=null">
+                flag= #{flag}
+            </if>
+        </trim>
+
+
+        where id =#{id}
+
+    </update>
 
 
 

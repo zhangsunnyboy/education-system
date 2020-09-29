@@ -57,4 +57,11 @@ public class GradeController {
         gradeService.delectGradeById(id);
         return new JsonResult(1,"删除成功");
     }
+
+    @RequestMapping("/updateGrade.do")
+    @ResponseBody
+    public JsonResult updateGrade(Grade grade){
+        gradeService.updateGrade(grade);
+        return new JsonResult(1,"修改成功");
+    }
 }

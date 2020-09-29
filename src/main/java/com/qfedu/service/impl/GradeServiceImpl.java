@@ -43,5 +43,13 @@ public class GradeServiceImpl implements GradeService {
 
     }
 
+    @Override
+    public void updateGrade(Grade grade) {
+        if(grade.getId() ==null){
+            throw new RuntimeException("数据异常");
+        }
+        gradeDao.updateGrade(grade);
+    }
+
 
 }
