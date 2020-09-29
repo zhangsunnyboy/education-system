@@ -1,5 +1,7 @@
 package com.qfedu.entity;
 
+import java.util.Date;
+
 /**
  * projectName: system
  * author: 张宁
@@ -9,8 +11,8 @@ package com.qfedu.entity;
 public class Askforleave {
     private Integer id;
     private Integer sid;
-    private String startTime;
-    private String endTime;
+    private Date startTime;
+    private Date endTime;
     private Integer count;
     private String status;
     private String reason;
@@ -31,19 +33,19 @@ public class Askforleave {
         this.sid = sid;
     }
 
-    public String getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public String getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 
