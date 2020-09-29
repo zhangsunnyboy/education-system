@@ -13,7 +13,7 @@ public class Grade {
     private String u_no;
     private String name;
     private Date createtime;
-    private String week;
+    private Integer week; //这个数据库里是int 你这里写的String 应该会报错 改成Integer
     private String location;
     private Integer flag;
 
@@ -49,11 +49,11 @@ public class Grade {
         this.createtime = createtime;
     }
 
-    public String getWeek() {
+    public Integer getWeek() {
         return week;
     }
 
-    public void setWeek(String week) {
+    public void setWeek(Integer week) {
         this.week = week;
     }
 
@@ -72,4 +72,6 @@ public class Grade {
     public void setFlag(Integer flag) {
         this.flag = flag;
     }
+
 }
+

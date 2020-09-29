@@ -1,10 +1,15 @@
 package com.qfedu.service.impl;
 
 import com.qfedu.dao.StudentDao;
+import com.qfedu.dto.StudentGrade;
 import com.qfedu.entity.Student;
 import com.qfedu.service.StudentService;
+import com.qfedu.vo.StudentEcharts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * projectName: system
@@ -32,6 +37,20 @@ public class StudentServiceImpl implements StudentService {
         }
         int id = studentDao.selectIdByName(name);
         return id;
+    }
+
+    @Override
+    public StudentEcharts selectStuAndGrade() {
+        List<StudentGrade> list = studentDao.selectStuAndGrade();
+        System.out.println("list =======================" + list.toString());
+        StudentEcharts studentEcharts = new StudentEcharts();
+        studentEcharts.setGrades(new ArrayList<>());
+        studentEcharts.setCounts(new ArrayList<>());
+        for(StudentGrade stu : list) {
+            studentEcharts.getGrades().add(stu.getGrade());
+            studentEcharts.getCounts().add(stu.getCount());
+        }
+        return studentEcharts;
     }
 
 

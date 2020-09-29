@@ -18,7 +18,7 @@
             <if test="week !=null">
                 week,
             </if>
-            <if test="location !=null">
+            <if test="location !=nuselectGradeAllll">
                 location,
             </if>
             <if test="flag !=null">
@@ -49,4 +49,10 @@
         </trim>
         )
     </insert>
+    <select id="selectGradeAll" resultType="com.qfedu.entity.Grade">
+        select * from t_grade
+    </select>
+
+
+
 </mapper>

@@ -1,6 +1,9 @@
 package com.qfedu.dao;
 
+import com.qfedu.dto.StudentGrade;
 import com.qfedu.entity.Student;
+
+import java.util.List;
 
 /**
  * projectName: system
@@ -11,4 +14,5 @@ import com.qfedu.entity.Student;
 public interface StudentDao {
     void insertStudent(Student student); //添加用户信息
     int selectIdByName(String name);
+    List<StudentGrade> selectStuAndGrade();
 }

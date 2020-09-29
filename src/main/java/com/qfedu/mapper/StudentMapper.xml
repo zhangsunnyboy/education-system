@@ -108,6 +108,9 @@
     <select id="selectIdByName" parameterType="string" resultType="int">
         select id from t_student where name = #{name}
     </select>
+    <select id="selectStuAndGrade" resultType="com.qfedu.dto.StudentGrade">
+        select g.name grade ,count(*) count from t_student s join t_grade g on s.cno = g.id GROUP BY cno ORDER BY s.cno
+    </select>
 
 
 </mapper>
