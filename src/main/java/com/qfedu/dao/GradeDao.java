@@ -8,4 +8,5 @@ import java.util.List;
 public interface GradeDao {
     public void insertGrade(Grade grade);
     public List<Grade> selectGradeAll();
+    public void delectGradeById(int id);
 }

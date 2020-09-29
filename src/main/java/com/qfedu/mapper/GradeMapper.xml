@@ -52,6 +52,9 @@
     <select id="selectGradeAll" resultType="com.qfedu.entity.Grade">
         select * from t_grade
     </select>
+    <delete id="delectGradeById" parameterType="int">
+        delete from t_grade where id =#{id}
+    </delete>
 
 
 

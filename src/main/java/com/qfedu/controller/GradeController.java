@@ -50,4 +50,11 @@ public class GradeController {
         map.put("data",list);
         return map;
     }
+
+    @RequestMapping("/delectGradeById.do")
+    @ResponseBody
+    public JsonResult delectGradeById(int id){
+        gradeService.delectGradeById(id);
+        return new JsonResult(1,"删除成功");
+    }
 }
