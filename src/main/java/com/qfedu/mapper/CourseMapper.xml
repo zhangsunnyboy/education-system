@@ -43,4 +43,9 @@
         </trim>
         )
     </insert>
+
+
+    <select id="selectCourseAll"  resultType="com.qfedu.entity.Course">
+        select * from t_course
+    </select>
 </mapper>
