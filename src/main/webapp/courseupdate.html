@@ -87,7 +87,7 @@
         $.ajax({
             type:"post",
             data:$('form').serialize(),
-            url:"course/courseupdate.do",
+            url:"/course/updateCourse.do",
             success:function (res) {
                 console.log(res)
                 if(res.code==1){
